@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4b70d66155d6891017e9f241422a331077b852b2722142412c8891645b0e67b
-size 349
+anyio
+certifi
+charset-normalizer
+distro
+filelock
+fsspec
+h11
+httpcore
+httpx
+huggingface-hub
+idna
+Jinja2
+jiter
+joblib
+MarkupSafe
+mpmath
+networkx
+numpy
+openai
+packaging
+pgvector
+pillow
+psycopg
+pydantic
+pydantic_core
+PyYAML
+regex
+requests
+safetensors
+scikit-learn
+scipy
+sentence-transformers
+setuptools
+sniffio
+sympy
+threadpoolctl
+tokenizers
+torch
+tqdm

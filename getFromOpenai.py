@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9616decde5bb9e381f1e7e12b56ade09b9b21dbf6a88dae968f68c9c45b61bfc
-size 399
+#!/usr/bin/python3
+
+import sys
+from openai import OpenAI
+
+client = OpenAI()
+
+input = sys.argv[1]
+
+''''
+text-embedding-3-small
+text-embedding-3-large
+chatgpt-4o-latest
+text-embedding-ada-002
+
+'''
+response = client.embeddings.create(input=input, model='text-embedding-3-small')
+embeddings = [v.embedding for v in response.data]
+
+for content, embedding in zip(input, embeddings):
+    print(embedding)
+

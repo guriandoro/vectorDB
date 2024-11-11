@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cb4b0cb0dedfeaf49d8c0e6cb72ad1b6527a9d15fe3fd220dafc6af68c2b2c1
-size 229
+#!/usr/bin/python3
+
+from sentence_transformers import SentenceTransformer
+import sys
+
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+
+input = sys.argv[1]
+embeddings = model.encode(input)
+print(embeddings)
+
