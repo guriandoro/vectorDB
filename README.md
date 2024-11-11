@@ -17,7 +17,7 @@ This means the following is installed at a minimum.
 
 ### Sample data
 
-I have added the smaple data and uploaded the compressed file with the use of the lfs plugin for git.
+I have added the sample data file to this repo it is 400MB. I used the lfs plugin for git.
 
 The entry script will perform the following:
 
