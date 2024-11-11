@@ -39,7 +39,8 @@ The entry script will perform the following:
 # IMPORTANT! READ THIS!
 
 **For some reason git clone will not copy the complete compressed data file into your local repo. You must clone the repo then click on 
-```vectordb_data.sql.gz``` via the browser or grab it from here https://github.com/jtorral/vectorDB/blob/main/vectordb_data.sql.gz and download it directly to your local repo before building your docker image. It is a 400MB file.**
+```vectordb_data.sql.gz``` via the browser by right clicking and downloading it directly to your local repo before building your docker image. It is a 400MB+ file.
+Don't ask me why. But curl or wget does not get the complete file. Itmust be something to do with the lfs feature of git I am not too familiar with.**
 
 ### Building the image
 
