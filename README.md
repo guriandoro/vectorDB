@@ -1,22 +1,50 @@
 ## vectorDB
 
-This is a docker container running postgres16, pgvector, openai and minilm packages along with pythn3 and additional packages
-needed to generate embeddings from openai or minilm using python scripts. I will add curl commands soon to do the same.
+This docker container is intended to help setup and run an environment to learn and practice vector databases with a focus on pgvector. 
+The container is not optimized for size but instead includes most of the tooling needed to get started withou having to build the env from scratch. 
+This means the following is installed at a minimum.
+
+* rocky linux 8
+* postgres 16
+* pgvector
+* python 3.9
+* bunch of needed python packages
+* python scripts to generate embeddings using openai and minilm. ( Located in ```/``` ) 
+* sample schema
+* sample test data
+
+**Note:** If using openai, you will need to generate an api key.  Visit https://platform.openai.com/api-keys for more details
 
 ### Sample data
 
-I will be adding a gz file containing sample data for pgvectore. I just need to get it on git since it is 400MB
-The docker entry script will pre populate the database with the vector data the remove the gz file to clear up space
+I have added the smaple data and uploaded the compressed file with the use of the lfs plugin for git.
+
+The entry script will perform the following:
+
+* Initiate the postgres db if its the first time running
+* Set the postgres password to "postgres"
+* Create a role named "vectordb" with a login password of "vectordb"
+* Create a database called "vectordb" owned by "vectordb"
+* Create the necessary tables inside the vectordb database
+* Populate the tables using the ```vectordb_data.sql``` 
+
+### Some postgres notes
+
+* All entries in pg_hba.conf have all been set to trust
+* The data directory is ```/pgdata/16/data```
+* The data directory should be preserved even if you remove the container. Obviouldy removing the volume will deletethe data
 
 
 ### Building the image
 
-The image takes a few minutes to build since there is a lot in it
+The image takes a few minutes to build since there is a lot mojo in it.
 
 ```docker build -t vectordb .```
 
 
 ### To run the container ....
+
+In the below example I am mapping port 6432 to the internal 5432 in the container. You can use whatever port you like
 
 ```docker run -p 6432:5432 --env=PGPASSWORD=postgres -v vectorDB:/pgdata --name vectorDB -d vectordb```
 
@@ -39,4 +67,6 @@ to run the container again which will recreate the volume
 
 ```docker volume rm vectorDB```
 
+### Any issues ??
 
+Send me an email or message with issues or suggestions.
