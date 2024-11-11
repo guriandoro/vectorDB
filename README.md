@@ -20,6 +20,14 @@ The image takes a few minutes to build since there is a lot in it
 
 ```docker run -p 6432:5432 --env=PGPASSWORD=postgres -v vectorDB:/pgdata --name vectorDB -d vectordb```
 
+### Python embedding scripts are located  ...
+
+```
+/getFromMinilm.py
+/getFromOpenai.py
+```
+
+
 ### To remove the container and preserve any data in it
 
 ```docker stop vectorDB; docker rm vectorDB;```
