@@ -68,6 +68,48 @@ to run the container again which will recreate the volume
 
 ```docker volume rm vectorDB```
 
+
+### Accessing db from outside container
+
+```
+psql -h localhost -p 6432 -U vectordb
+
+psql (16.4)
+Type "help" for help.
+
+vectordb=> \dt
+              List of relations
+ Schema |      Name       | Type  |  Owner   
+--------+-----------------+-------+----------
+ public | articles        | table | vectordb
+ public | articles_minilm | table | vectordb
+ public | articles_openai | table | vectordb
+(3 rows)
+```
+
+### Accessing db from inside the container
+
+```
+docker exec -it vectorDB /bin/bash
+
+[root@bb99b4fe8b73 /]# psql -U vectordb
+
+psql (16.4)
+Type "help" for help.
+
+vectordb=> \dt
+              List of relations
+ Schema |      Name       | Type  |  Owner   
+--------+-----------------+-------+----------
+ public | articles        | table | vectordb
+ public | articles_minilm | table | vectordb
+ public | articles_openai | table | vectordb
+(3 rows)
+
+vectordb=> 
+```
+
+
 ### Any issues ??
 
 Send me an email or message with issues or suggestions.
