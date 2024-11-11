@@ -1,4 +1,4 @@
-## vectorDB
+# vectorDB
 
 This docker container is intended to help setup and run an environment to learn and practice vector databases with a focus on pgvector. 
 The container is not optimized for size but instead includes most of the tooling needed to get started withou having to build the env from scratch. 
@@ -34,6 +34,7 @@ The entry script will perform the following:
 * The data directory is ```/pgdata/16/data```
 * The data directory should be preserved even if you remove the container. Obviouldy removing the volume will deletethe data
 
+## TL;DR
 
 ### Building the image
 
