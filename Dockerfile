@@ -28,7 +28,7 @@ COPY pgsqlProfile /
 COPY getFromMinilm.py /
 COPY getFromOpenai.py /
 COPY packages.txt /
-COPY vectordb_schema.sql /
+COPY setupDB.sql /
 COPY vectordb_data.sql.gz /
 
 RUN pip3 install -U -r /packages.txt
@@ -42,7 +42,7 @@ RUN chmod +x /entrypoint.sh
 RUN chmod +x /getFromMinilm.py
 RUN chmod +x /getFromOpenai.py
 RUN chmod +x /vectordb_data.sql.gz
-RUN chmod +x /vectordb_schema.sql
+RUN chmod +x /setupDB.sql
 
 SHELL ["/bin/bash", "-c"]
 ENTRYPOINT /entrypoint.sh

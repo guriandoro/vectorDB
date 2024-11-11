@@ -1,3 +1,14 @@
+ALTER ROLE postgres PASSWORD 'postgres';
+
+CREATE ROLE vectordb WITH LOGIN PASSWORD 'vectordb';
+CREATE database vectordb WITH OWNER vectordb;
+
+\c vectordb
+
+CREATE EXTENSION vector;
+
+\c vectordb
+
 CREATE TABLE articles (
     id integer NOT NULL,
     url text,
@@ -37,4 +48,8 @@ ALTER TABLE ONLY articles
 
 ALTER TABLE ONLY articles_openai
     ADD CONSTRAINT articles_openai_pkey1 PRIMARY KEY (id);
+
+\c vectordb
+
+\i /vectordb_data.sql
 
