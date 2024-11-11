@@ -36,6 +36,11 @@ The entry script will perform the following:
 
 ## TL;DR
 
+# <span style="color:red">IMPORTANT! READ THIS!</span>
+
+For some reason git clone will not copy the complet compressed data file into your repo. You must clone the repo then click on 
+```vectordb_data.sql.gz``` via the browser and download it directly to your local repo.
+
 ### Building the image
 
 The image takes a few minutes to build since there is a lot mojo in it.
