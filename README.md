@@ -42,6 +42,10 @@ The entry script will perform the following:
 ```vectordb_data.sql.gz``` via the browser by right clicking and downloading it directly to your local repo before building your docker image. It is a 400MB+ file.
 Don't ask me why. But curl or wget does not get the complete file. Itmust be something to do with the lfs feature of git I am not too familiar with.**
 
+**Try this and see if you get a 400MB+ file. If so it works**
+
+```curl -LO https://github.com/jtorral/vectorDB/raw/refs/heads/main/vectordb_data.sql.gz```
+
 ### Building the image
 
 The image takes a few minutes to build since there is a lot mojo in it.
