@@ -40,14 +40,14 @@ CREATE TABLE articles_openai (
 ALTER TABLE articles_openai OWNER TO vectordb;
 
 
+ALTER TABLE ONLY articles
+    ADD CONSTRAINT articles_pkey PRIMARY KEY (id);
+
 ALTER TABLE ONLY articles_minilm
     ADD CONSTRAINT articles_minilm_pkey PRIMARY KEY (id);
 
-ALTER TABLE ONLY articles
-    ADD CONSTRAINT articles_openai_pkey PRIMARY KEY (id);
-
 ALTER TABLE ONLY articles_openai
-    ADD CONSTRAINT articles_openai_pkey1 PRIMARY KEY (id);
+    ADD CONSTRAINT articles_openai_pkey PRIMARY KEY (id);
 
 \c vectordb
 
